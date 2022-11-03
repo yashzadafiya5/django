@@ -1,0 +1,22 @@
+ create app eshop
+        create five views
+            home 
+            product
+            service
+            blogs
+            contactus
+ create app school
+        create five views
+            home 
+            aboutus
+            gallary
+            videos
+            contactus
+create app gym
+    create six views
+        home 
+        aboutus
+        eqipments
+        ourteam
+        branches
+        wokwithus
