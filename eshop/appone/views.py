@@ -13,5 +13,18 @@ def blogs(request):
     return HttpResponse("this is blogs page")
 def contactus(request):
     return HttpResponse("this is contactus page")
-
+def home(request):
+    return render (request,'home.html',{'name':'param','address':'aksharvadi,bhavnager'})
+def blogs(request):
+    return render (request,'blogs.html',{'name':'param','address':'aksharvadi,bhavnager'})
+def contactus(request,name,address,pincode):
+    return render (request,'contactus.html',{
+        'name':name,
+        'address':address,
+        'pincode':pincode,
+        })
+def product(request):
+    return render (request,'product.html',{'name':'param','address':'aksharvadi,bhavnager'})
+def service(request):
+    return render (request,'service.html',{'name':'param','address':'aksharvadi,bhavnager'})
 

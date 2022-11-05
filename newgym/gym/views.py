@@ -4,17 +4,17 @@ from django.shortcuts import render
 # Create your views here.
 
 def home(request):
-    return HttpResponse("this is home page.......")
+    return render(request,"home.html")
 def aboutus(request):
-    return HttpResponse("this is aboutus page.......")
+    return render(request,"aboutus.html")
 def eqipments(request):
-    return HttpResponse("this is eqipments page.......")
+    return render(request,"eqipments.html")
 def ourteam(request):
-    return HttpResponse("this is ourteam page.......")
+    return render(request,"ourteam.html")
 def branches(request):
-    return HttpResponse("this is branches page.......")
+    return render(request,"branches.html")
 def wokwithus(request):
-    return HttpResponse("this is wokwithus page.......")
+    return render(request,"wokwithus.html")
 
 
 

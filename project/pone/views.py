@@ -8,3 +8,5 @@ def index(request):
 
 def home(request):
     return render(request,"new.html")
+def support(request):
+    return render(request,"support.html",{'name':'param'})
