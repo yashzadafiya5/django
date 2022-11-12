@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+        h1 {
+            color: skyblue;
+            text-align: center;
+          }
+          /* if dark-mode class is not added set this background */
+          body {
+            background: white;
+            transition: 0.5s;
+          }
+          .container{
+              text-align: center;
+              padding: 70px;
+          }
+          #ChangeTheme {
+            width: 0;
+            height: 0;
+            opacity: 0;
+          }
+          label{
+            display: block;
+            height: 15px;
+            width: 60px;
+            position: relative;
+            margin: 0px auto;
+          }
+          span.slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #dadada;
+            border-radius: 30px;
+          }
+          span.slide:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            background: #fff;
+            border-radius: 50%;
+            top: -2px;
+            left: 0px;
+            transition: 0.5s;
+            box-shadow: rgba(0, 0, 0, 0.21) 0px 0px 7px 1px;
+          }
+          .txt {
+            position: relative;
+          }
+          .txt p:nth-child(1) {
+            color: grey;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: 0.5s;
+          }
+          #ChangeTheme:checked + span.slide:before {
+            transform: translatex(40px);
+          }
+          /* if dark-mode class is added set this background */
+          body.dark-mode {
+            background: #353535;
+          }
+          .dark-mode .txt p:nth-child(1) {
+            color: #000;
+            font-weight: normal;
+          }
+          .dark-mode .txt p:nth-child(2) {
+            color: grey;
+            font-weight: bold;
+          }
+          
+          body.dark-mode header,
+          body.dark-mode main,
+          body.dark-mode footer{
+              background: #616161 !important;
+              
+          }
+          body.dark-mode a.btn{
+              background: #333 !important;
+              color: #999 !important;
+          }
+          body.dark-mode p{
+              color: gray !important;
+          }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container d-flex justify-content-between border border-3 mt-2" style="background-color: rgb(252, 254, 239);">
+            <h3 style="margin-left: 15px;" class="mt-2">The Easy Learn Academy</h3>
+            <ul class="d-flex list-unstyled" style="margin-right: 15px;" >
+                <li class="m-3">home</li>
+                <li class="m-3">about us</li>
+                <li class="m-3">contect us</li>
+            </ul>
+        </div>
+    </nav>
+    <footer class="footer-bs">
+        <div class="row">
+        	<div class="col-md-3 footer-brand animated fadeInLeft">
+            	<h2>Logo</h2>
+                <p>Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor vitae orci nec ultricies. Curabitur vehicula, libero eget faucibus faucibus, purus erat eleifend enim, porta pellentesque ex mi ut sem.</p>
+                <p>© 2045 Bootstrap, All rights reserved</p>
+            </div>
+        	<div class="col-md-4 footer-nav animated fadeInUp">
+            	<h4>Menu —</h4>
+            	<div class="col-md-6">
+                    <ul class="pages">
+                        <li><a href="#">Travel</a></li>
+                        <li><a href="#">Nature</a></li>
+                        <li><a href="#">Explores</a></li>
+                        <li><a href="#">Science</a></li>
+                        <li><a href="#">Advice</a></li>
+                    </ul>
+                </div>
+            	<div class="col-md-6">
+                    <ul class="list">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contacts</a></li>
+                        <li><a href="#">Terms & Condition</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        	<div class="col-md-2 footer-social animated fadeInDown">
+            	<h4>Follow Us</h4>
+            	<ul>
+                	<li><a href="#">Facebook</a></li>
+                	<li><a href="#">Twitter</a></li>
+                	<li><a href="#">Instagram</a></li>
+                	<li><a href="#">RSS</a></li>
+                </ul>
+            </div>
+        	<div class="col-md-3 footer-ns animated fadeInRight">
+            	<h4>Newsletter</h4>
+                <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
+                <p>
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Search for...">
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+                      </span>
+                    </div><!-- /input-group -->
+                 </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    
+</body>
+</html>

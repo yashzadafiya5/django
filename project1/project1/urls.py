@@ -19,4 +19,5 @@ from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('app_one/', include('app_one.urls')),
+    path('mathcalculate/', include('mathcalculate.urls')),
 ]

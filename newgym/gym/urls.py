@@ -7,7 +7,7 @@ urlpatterns=[
     path('eqipments',views.eqipments,name='eqipments page'),
     path('ourteam',views.ourteam,name='ourteam page'),
     path('branches',views.branches,name='branches page'),
-    path('wokwithus',views.wokwithus,name='wokwithus page'),
+    path('wokwithus/<str:tranername>/<str:add>/<int:fees>/',views.wokwithus,name='wokwithus page'),
 ]
 
 

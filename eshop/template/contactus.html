@@ -7,9 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>contact us page</h1>
-    <h3>name:{{name}}</h3>
-    <h3>add:{{address}}</h3>
-    <h3>pincode:{{pincode}}</h3>
+    {% extends 'base.html' %}
+    {% block content  %}
+        <h1>contact us page</h1>
+        <h3>name:{{name}}</h3>
+        <h3>add:{{address}}</h3>
+        <h3>pincode:{{pincode}}</h3>
+    {% endblock %}
+    
 </body>
 </html>

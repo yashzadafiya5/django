@@ -7,6 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>work with us page</h1>
+    {% extends 'maintemplate.html' %}
+    {% block content %}
+        <h1>work with us page</h1>
+        <form action="">
+            <h3>TranerName:{{name}}</h3>
+            <h3>Address:{{add}}</h3>
+            <h3>TranerFess:{{fees}}</h3>
+        </form>
+    {% endblock %}
+    
 </body>
 </html>

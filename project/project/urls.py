@@ -19,4 +19,5 @@ from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('pone/',include('pone.urls')),
+    path('mathcal/',include('mathcal.urls')),
 ]
