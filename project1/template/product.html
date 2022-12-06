@@ -1,0 +1,60 @@
+{% extends 'django_template.html' %}
+{% load static %}
+{% block content %}
+		<!-- Start Banner Area -->
+	<section class="banner-area organic-breadcrumb">
+		<div class="container">
+			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+				<div class="col-first">
+					<h1>Product page</h1>
+					
+				</div>
+			</div>
+		</div>90
+	</section>
+	<!-- End Banner Area -->
+	<div class="container">
+		<div class="row">
+			
+			<div class="col-xl-12 col-lg-12 col-md-12">
+				<!-- Start Filter Bar -->
+			
+				<!-- End Filter Bar -->
+				<!-- Start Best Seller -->
+				<section class="lattest-product-area pb-40 category-list">
+					<div class="row">
+						<!-- single product -->
+						<div class="col-lg-4 col-md-6">
+							<div class="single-product">
+								<a href="singleproduct">
+								<img class="img-fluid" src="{% static  'img/product/p1.jpg' %}" alt=""></a>
+								<div class="product-details">
+									<h6 class="text-center">Product Title</h6>
+									<div class="price">
+										<h6>$150.00</h6>
+										<h6 class="l-through">$210.00</h6>
+									</div>
+                                    <div class="prd-bottom">
+										<a href="" class="social-info">
+											<span class="ti-bag"></span>
+											<p class="hover-text">add to cart</p>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</section>
+				<!-- End Best Seller -->
+				
+			</div>
+		</div>
+	</div>
+{% endblock  %}
+
+	
+
+	
+
+

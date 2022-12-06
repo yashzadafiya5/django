@@ -38,7 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app_one.apps.AppOneConfig',
-    'mathcalculate.apps.MathcalculateConfig'
+    'mathcalculate.apps.MathcalculateConfig',
+    'forms.apps.FormsConfig',
+    'mydatabase.apps.MydatabaseConfig',
+    'myproject.apps.MyprojectConfig',
+    
 ]
 
 MIDDLEWARE = [
@@ -76,10 +80,14 @@ WSGI_APPLICATION = 'project1.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+	'default': {
+		'ENGINE': 'django.db.backends.mysql',
+		'NAME': 'django_one',
+		'USER': 'root',
+		'PASSWORD': '',
+		'HOST':'localhost',
+		'PORT':'3306',
+	}
 }
 
 
@@ -119,6 +127,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS=(os.path.join(BASE_DIR,'static')),
+STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 

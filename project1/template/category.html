@@ -1,0 +1,47 @@
+{% extends 'django_template.html' %}
+{% load static %}
+{% block content %}
+	
+
+	<!-- Start Banner Area -->
+	<section class="banner-area organic-breadcrumb">
+		<div class="container">
+			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+				<div class="col-first">
+					<h1>Shop Category page</h1>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Banner Area -->
+	<div class="container">
+		<div class="row">
+			
+			<div class="col-xl-12 col-lg-12 col-md-12">
+				<!-- Start Filter Bar -->
+			
+				<!-- End Filter Bar -->
+				<!-- Start Best Seller -->
+				<section class="lattest-product-area pb-40 category-list">
+					<div class="row">
+						<!-- single product -->
+						<div class="col-lg-4 col-md-6">
+							<div class="single-product">
+								<img class="img-fluid" src="{% static 'img/product/p1.jpg" alt="">
+								<div class="product-details">
+									<h6 class="text-center">Category Title</h6>
+									
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</section>
+				<!-- End Best Seller -->
+				
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

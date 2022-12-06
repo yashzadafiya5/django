@@ -20,4 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('app_one/', include('app_one.urls')),
     path('mathcalculate/', include('mathcalculate.urls')),
+    path('forms/', include('forms.urls')),
+    path('mydatabase/', include('mydatabase.urls')),
+    path('myproject/', include('myproject.urls')),
 ]

@@ -1,0 +1,58 @@
+{% extends 'django_template.html' %}
+{% load static %}
+{% block content %}
+
+	
+	<!-- Start Banner Area -->
+	<section class="banner-area organic-breadcrumb">
+		<div class="container">
+			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+				<div class="col-first">
+					<h1>Product detail page</h1>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	<section style="margin-top: -150px;">
+        <div class="container">
+            <div class="product_image_area">
+                <div class="container">
+                    <div class="row s_product_inner">
+                        <div class="col-lg-6">
+                            <div class="s_Product_carousel">
+                                <div class="single-prd-item">
+                                    <img class="img-fluid" src="{% static 'img/category/s-p1.jpg' %}" alt="">
+                                </div>
+                                <div class="single-prd-item">
+                                    <img class="img-fluid" src="{% static 'img/category/s-p1.jpg' %}" alt="">
+                                </div>
+                                <div class="single-prd-item">
+                                    <img class="img-fluid" src="{% static 'img/category/s-p1.jpg' %}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 offset-lg-1">
+                            <div class="s_product_text">
+                                <h3>Product nav-item</h3>
+                                <h2>Rs 2500</h2>
+                                <ul class="list">
+                                    <li><a class="active" href="#"><span>Category</span> : Household</a></li>
+                                    <li><a href="#"><span>Availibility</span> : In Stock</a></li>
+                                </ul>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus aspernatur voluptatem explicabo magni quisquam molestiae maxime, excepturi ad quod quia aperiam accusantium nam assumenda in consequatur impedit minima iste ipsum?</p>
+                                
+                                <div class="card_area d-flex align-items-center">
+                                    <a class="primary-btn" href="#">Add to Cart</a>
+                            
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </section>
+	
+	{%endblock %}
