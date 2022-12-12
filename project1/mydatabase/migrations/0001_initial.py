@@ -49,7 +49,6 @@
 
 import datetime
 from django.db import migrations, models
-from django_add_default_value import AddDefaultValue
 
 class Migration(migrations.Migration):
 
@@ -69,11 +68,7 @@ class Migration(migrations.Migration):
                 ('photo', models.ImageField(upload_to='pics')),
             ],
         ),
-        AddDefaultValue(
-            model_name='Category',
-            name='status',
-            value='0'
-        ),
+        
         migrations.CreateModel(
             name='Product',
             fields=[
@@ -85,11 +80,7 @@ class Migration(migrations.Migration):
                 ('photo', models.ImageField(upload_to='pics')),
             ],
         ),
-        AddDefaultValue(
-            model_name='Product',
-            name='price',
-            value='0'
-        ),
+        
         migrations.CreateModel(
             name='User',
             fields=[
@@ -100,9 +91,5 @@ class Migration(migrations.Migration):
                 ('register_at', models.DateTimeField(default=datetime.datetime(2022, 11, 21, 18, 11, 17, 766299), null=True)),
             ],
         ),
-        AddDefaultValue(
-            model_name='User',
-            name='register_at',
-            value=datetime.datetime.now()
-        ),
+        
     ]

@@ -1,11 +1,15 @@
 from django.shortcuts import render
-
+from django.http import HttpResponse
+from .models import categorys,Products
+from .myform import RagisterForm as i
 # Create your views here.
+
 def index(request):
     return render(request,'index.html')
 
-def product(request):
-    return render(request,'product.html')
+def product(request,cateid,categoryname):
+    table=Products.objects.all().filter(categoryid=cateid)
+    return render(request,'product.html',{'table':table,'categoryname':categoryname})
 
 def product_detail(request):
     return render(request,'product-detail.html')
@@ -23,7 +27,8 @@ def tracking(request):
     return render(request,'tracking.html')
 
 def category(request):
-    return render(request,'category.html')
+        table=categorys.objects.all()
+        return render(request,'category.html',{'table':table})
 
 def cheakout(request):
     return render(request,'checkout.html')
@@ -42,3 +47,10 @@ def cart(request):
 
 def login(request):
     return render(request,'login2.html')
+
+def register2(request):
+    return render(request,'register2.html')
+
+def changepassword(request):
+    return render(request,'changepassword2.html')
+

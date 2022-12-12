@@ -5,3 +5,4 @@ class ragister(models.Model):
     password=models.CharField(max_length=250)
     mobile=models.CharField(max_length=20)
     
+    

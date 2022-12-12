@@ -75,6 +75,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'project1.wsgi.application'
 
+WSGI_APPLICATION = 'onlinefood.wsgi.application'
+HOTEL='../media/pics/'
+
+SETTING_EXPORT =[
+    'HOTEL'
+]
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
@@ -82,7 +88,7 @@ WSGI_APPLICATION = 'project1.wsgi.application'
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.mysql',
-		'NAME': 'django_one',
+		'NAME': 'project_one',
 		'USER': 'root',
 		'PASSWORD': '',
 		'HOST':'localhost',
@@ -129,6 +135,9 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS=(os.path.join(BASE_DIR,'static')),
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 

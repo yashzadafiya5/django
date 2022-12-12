@@ -1,7 +1,6 @@
 from django.db import models
 import django
 import datetime
-from django_add_default_value import AddDefaultValue
 class Category(models.Model):
     title = models.CharField(max_length=128)
     description = models.TextField(max_length=512)

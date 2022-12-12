@@ -4,6 +4,7 @@ class RagisterForm(forms.ModelForm):
     email=forms.CharField(widget=forms.EmailInput(attrs={'class':'form-control'}),label='email',required=True)
     password=forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control'}),label='Password',required=True)
     mobile=forms.CharField(widget=forms.NumberInput(attrs={'class':'form-control'}),label='mobile',required=True)
+
     class Meta:
         model=ragister
         fields=('email','password','mobile')
