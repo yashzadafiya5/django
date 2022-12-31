@@ -1,0 +1,115 @@
+{% extends 'django_template.html' %}
+{% load static %}
+{% block content %}
+
+     <div class="breadcumb-wrapper" data-bg-src="{% static 'assets/img/breadcumb/breadcumb-bg.jpg' %}">
+          <div class="container z-index-common">
+               <div class="breadcumb-content">
+                    <h1 class="breadcumb-title">Product <span class="font-style text-theme2">Details</span></h1>
+                    <ul class="breadcumb-menu">
+                         <li><a href="index.html">Home</a></li>
+                         <li>Product information</li>
+                    </ul>
+               </div>
+          </div>
+     </div>
+     <section class="as-product-wrapper product-details space-top space-extra-bottom">
+          <div class="container">
+               <div class="row">
+                    <div class="col-lg-7">
+                         <div class="product-thumb-area">
+                              <div class="product-thumb-tab" data-asnavfor=".product-big-img">
+                                   <div class="tab-btn active"><img src="{% static 'assets/img/menu/cofee3.png' %}"
+                                             alt="Product Thumb"></div>
+                                   <div class="tab-btn"><img src="{% static 'assets/img/menu/cofee3.png' %}"
+                                             alt="Product Thumb"></div>
+                                   <div class="tab-btn"><img src="{% static 'assets/img/menu/cofee3.png' %}"
+                                             alt="Product Thumb"></div>
+                                   <div class="tab-btn"><img src="{% static 'assets/img/menu/cofee3.png' %}"
+                                             alt="Product Thumb"></div>
+                                   <div class="tab-btn"><img src="{% static 'assets/img/menu/cofee3.png' %}"
+                                             alt="Product Thumb"></div>
+                              </div>
+                              <div class="product-big-img as-carousel" data-slide-show="1" data-md-slide-show="1"
+                                   data-fade="true">
+                                   <div class="col-auto">
+                                        <div class="img"><img src="{% static 'assets/img/menu/caf3.png' %}"
+                                                  alt="Product Image"></div>
+                                   </div>
+                                   <div class="col-auto">
+                                        <div class="img"><img src="{% static 'assets/img/menu/caf3.png' %}"
+                                                  alt="Product Image"></div>
+                                   </div>
+                                   <div class="col-auto">
+                                        <div class="img"><img src="{% static 'assets/img/menu/caf3.png' %}"
+                                                  alt="Product Image"></div>
+                                   </div>
+                                   <div class="col-auto">
+                                        <div class="img"><img src="{% static 'assets/img/menu/caf3.png' %}"
+                                                  alt="Product Image"></div>
+                                   </div>
+                                   <div class="col-auto">
+                                        <div class="img"><img src="{% static 'assets/img/menu/caf3.png' %}"
+                                                  alt="Product Image"></div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="col-lg-5 align-self-center">
+                         <div class="product-about">
+                              <h2 class="product-title">{{row.title}}</h2>
+                              <p class="price"> &#8377; {{row.sellprice}}<del> &#8377; {{row.price}}</del></p>
+                              <p class="text">{{row.description}}</p>
+                              <div class="actions">
+                                   <div class="quantity"><input type="number" class="qty-input" step="1" min="1"
+                                             max="100" name="quantity" value="{{row.stock}}" title="Qty"> <button
+                                             class="quantity-plus qty-btn"><i class="far fa-chevron-up"></i></button>
+                                        <button class="quantity-minus qty-btn"><i
+                                                  class="far fa-chevron-down"></i></button><br></div><a class="as-btn" href="/food1/cart/{{row.id}}">Add to Cart</a>
+                              </div>
+                              
+                              <div class="share">
+                                   <p class="share-title"><i class="fa-solid fa-share"></i> Share</p>
+                                   <div class="as-social"><a target="_blank" href="https://facebook.com/"><i
+                                                  class="fab fa-facebook-f"></i></a> <a target="_blank"
+                                             href="https://twitter.com/"><i class="fab fa-twitter"></i></a> <a
+                                             target="_blank" href="https://instagram.com/"><i
+                                                  class="fab fa-instagram"></i></a> <a target="_blank"
+                                             href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a></div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+               <div class="space-extra-top mb-30">
+                    <div class="title-area text-center">
+                         <h2 class="sec-title">Related Products</h2>
+                         <p class="sec-text ms-auto me-auto">Objectively pontificate quality models before intuitive
+                              information. Dramatically recaptiualize multifunctional materials.</p>
+                    </div>
+                    <div class="row slider-shadow as-carousel" data-slide-show="4" data-lg-slide-show="3"
+                         data-md-slide-show="2" data-sm-slide-show="2" data-xs-slide-show="1" data-arrows="true">
+                        
+                         {% for row in table1 %}
+                         <div class="col-xl-3 col-lg-4 col-sm-6">
+                              <div class="as-product">
+                                   <a href="/food1/productdetail/{{row.id}}/{{row.categoryid}}">
+                                        <div class="product-img"><img src="{% static 'assets/img/menu/menu_1_1.png' %}" alt="Product Image">
+                                        </div>
+                                        <div class="product-content">
+                                             <h3 class="product-title"><a href="/food1/productdetail/{{row.id}}/{{row.categoryid}}">{{row.title}}</a></h3>
+                                             <span class="price">&#8377; {{row.sellprice}}<del>&#8377; {{row.price}}</del></span>
+                                             <div class="actions"> <a href="/food1/productdetail/{{row.id}}/{{row.categoryid}}"
+                                                       class="icon-btn"><i class="fal fa-cart-plus"></i></a> <a
+                                                       href="/food1/productdetail/{{row.id}}/{{row.categoryid}}" class="icon-btn"><i class="fal fa-heart"></i></a>
+                                             </div>
+                                        </div>
+                                   </a>
+                              </div>
+                         </div> 
+                         {% endfor %}
+                    </div>
+               </div>
+          </div>
+     </section>
+
+     {% endblock %}

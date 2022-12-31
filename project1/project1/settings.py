@@ -74,14 +74,13 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'project1.wsgi.application'
+HOTEL = '../media/hotels/';
+CATEGORY = '../../media/categories/';
 
-WSGI_APPLICATION = 'onlinefood.wsgi.application'
-HOTEL='../media/pics/'
-
-SETTING_EXPORT =[
-    'HOTEL'
+SETTINGS_EXPORT = [
+    'HOTEL',
+    'CATEGORY',
 ]
-
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 

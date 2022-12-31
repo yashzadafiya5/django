@@ -20,21 +20,27 @@
 				<div class="col-lg-6 m-auto">
 					<div class="login_form_inner">
 						<h3>Log in to enter</h3>
-						<form class="row login_form" action="index" method="post" id="contactForm" novalidate="novalidate">
+						<form class="row login_form" method="post" id="loginform" >
 							{% csrf_token %}
 							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="name" name="name" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
+								<input type="email" class="form-control" id="loginemail" name="loginemail" placeholder="Username">
 							</div>
 							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="name" name="name" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
+								<input type="password" class="form-control" id="loginpassword" name="loginpassword" placeholder="Password">
 							</div>
 							
 							<div class="col-md-12 form-group">
-								<button type="submit" value="submit" class="primary-btn">Log In</button>
+								<button type="button" value="submit" class="primary-btn" id="btnlogin">Log In</button>
 								<a class="primary-btn" href="register2">Create an Account</a>
 								<a href="forgotpassword">Forgot Password?</a>
 							</div>
 						</form>
+
+						<div class="card">
+							<div class="card-body" id="loginoutputs">
+
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

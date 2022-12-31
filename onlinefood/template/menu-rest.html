@@ -1,0 +1,115 @@
+{% extends 'django_template.html' %}
+{% load static %}
+{% block content %}
+     
+     <div class="breadcumb-wrapper" data-bg-src="{% static 'assets/img/breadcumb/breadcumb-bg.jpg' %}">
+          <div class="container z-index-common">
+               <div class="breadcumb-content">
+                    <h1 class="breadcumb-title">RESTAURANT FOOD <span class="font-style text-theme2">MENU</span></h1>
+                    <ul class="breadcumb-menu">
+                         <li><a href="index.html">Home</a></li>
+                         <li>RESTAURANT FOOD MENU</li>
+                    </ul>
+               </div>
+          </div>
+     </div>
+     <section class="space-top space-extra-bottom">
+          <div class="container">
+               <div class="title-area text-center"><span class="sub-title"><img class="icon"
+                              src="{% static '/assets/img/icon/title_icon.svg' %}" alt="icon"> Restaurant Food Menu</span>
+                    <h2 class="sec-title">Our Restaurant <span class="font-style text-theme">Food Menu</span></h2>
+                    <p class="sec-text ms-auto me-auto">Objectively pontificate quality models before intuitive
+                         information. Dramatically recaptiualize multifunctional materials.</p>
+               </div>
+               <h3 class="divider-title mt-n2"><span class="text">Breakfast Food</span></h3>
+               <div class="row gy-4">
+                    <!-- single brakfast -->
+                    <div class="col-lg-6">
+                         <div class="as-product list-view">
+                              <div class="product-img"><img src="{% static 'assets/img/menu/menu_rest_1_1.png' %}" alt="Product Image">
+                              </div>
+                              <div class="product-content">
+                                   <h3 class="product-title"><a href="shop-details.html">Beef Masala Salad</a></h3>
+                                   <p class="product-text">Lightly smoked and minced pork tenderloin topped with our
+                                        chilli hot sauce.</p><span class="price">$180.85<del>$350.99</del></span>
+                                   <div class="actions"><a href="cart.html" class="as-btn">order now</a></div>
+                              </div>
+                         </div>
+                    </div>
+                    <!-- single brakfast -->
+               </div>
+               <h3 class="divider-title"><span class="text">Lunch Food</span></h3>
+               <div class="row gy-4">
+                    <!-- single brakfast -->
+                    <div class="col-lg-6">
+                         <div class="as-product list-view">
+                              <div class="product-img"><img src="{% static 'assets/img/menu/menu_rest_1_7.png' %}" alt="Product Image">
+                              </div>
+                              <div class="product-content">
+                                   <h3 class="product-title"><a href="shop-details.html">Beef Masala Salad</a></h3>
+                                   <p class="product-text">Lightly smoked and minced pork tenderloin topped with our
+                                        chilli hot sauce.</p><span class="price">$180.85<del>$350.99</del></span>
+                                   <div class="actions"><a href="cart.html" class="as-btn">order now</a></div>
+                              </div>
+                         </div>
+                    </div>
+                    <!-- single brakfast -->
+               </div>
+               <h3 class="divider-title"><span class="text">Dinner Food</span></h3>
+               <div class="row gy-4">
+                    <!-- single brakfast -->
+                    <div class="col-lg-6">
+                         <div class="as-product list-view">
+                              <div class="product-img"><img src="{% static 'assets/img/menu/menu_rest_1_13.png' %}"
+                                        alt="Product Image"></div>
+                              <div class="product-content">
+                                   <h3 class="product-title"><a href="shop-details.html">Fried Rice</a></h3>
+                                   <p class="product-text">Lightly smoked and minced pork tenderloin topped with our
+                                        chilli hot sauce.</p><span class="price">$180.85<del>$350.99</del></span>
+                                   <div class="actions"><a href="cart.html" class="as-btn">order now</a></div>
+                              </div>
+                         </div>
+                    </div>
+                    <!-- single brakfast -->
+               </div>
+               <h3 class="divider-title"><span class="text">Healthy Food</span></h3>
+               <div class="row gy-4">
+                    <!-- single brakfast -->
+                    <div class="col-lg-6">
+                         <div class="as-product list-view">
+                              <div class="product-img"><img src="{% static 'assets/img/menu/menu_rest_1_17.png' %}"
+                                        alt="Product Image"></div>
+                              <div class="product-content">
+                                   <h3 class="product-title"><a href="shop-details.html">Vegetable soup</a></h3>
+                                   <p class="product-text">Lightly smoked and minced pork tenderloin topped with our
+                                        chilli hot sauce.</p><span class="price">$180.85<del>$350.99</del></span>
+                                   <div class="actions"><a href="cart.html" class="as-btn">order now</a></div>
+                              </div>
+                         </div>
+                    </div>
+                    <!-- single brakfast -->
+               </div>
+               <div class="text-center mt-5">
+                    <div class="as-pagination">
+                         <ul>
+                              <li><a href="blog.html">1</a></li>
+                              <li><a href="blog.html">2</a></li>
+                              <li><a href="blog.html">3</a></li>
+                              <li><a href="blog.html"><i class="far fa-arrow-right"></i></a></li>
+                         </ul>
+                    </div>
+               </div>
+          </div>
+          <div class="shape-mockup chili jump-reverse" data-top="0%" data-left="0"><img
+                    src="{% static 'assets/img/shape/red_chili_2.png' %}" alt="shape"></div>
+          <div class="shape-mockup jump" data-top="12%" data-right="5%"><img src="{% static 'assets/img/shape/leaf_4.png' %}"
+                    alt="shape"></div>
+          <div class="shape-mockup jump" data-top="36%" data-left="4%"><img src="{% static 'assets/img/shape/leaf_4.png' %}"
+                    alt="shape"></div>
+          <div class="shape-mockup jump-reverse" data-bottom="15%" data-left="4%"><img src="{% static 'assets/img/shape/leaf_5.png' %}"
+                    alt="shape"></div>
+          <div class="shape-mockup leaf jump" data-bottom="15%" data-right="0"><img src="{% static 'assets/img/shape/leaf_6.png' %}"
+                    alt="shape"></div>
+     </section>
+     
+{% endblock %}

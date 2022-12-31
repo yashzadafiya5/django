@@ -1,0 +1,50 @@
+{% extends 'django_template.html' %}
+{% load static %}
+{% block content %}
+
+<div class="breadcumb-wrapper " data-bg-src="{% static 'assets/img/breadcumb/breadcumb-bg.jpg' %}">
+  <div class="container z-index-common">
+    <div class="breadcumb-content">
+      <h1 class="breadcumb-title">
+        Our <span class="font-style text-theme2">Hotels</span>
+      </h1>
+      <ul class="breadcumb-menu">
+        <li><a href="index.html">Home</a></li>
+        <li>Our Hotels</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<section class="space ">
+    <div class="container">
+         <div class="title-area text-center"><span class="sub-title"><img class="icon"
+                        src="{% static 'assets/img/icon/title_icon.svg' %}" alt="icon"> Hotels</span>
+              <h2 class="sec-title">Our Foods provide <span class="font-style text-theme">hotels</span></h2>
+              <p class="sec-text ms-auto me-auto">Objectively pontificate quality models before intuitive
+                   information. Dramatically recaptiualize multifunctional materials.</p>
+         </div>
+         <div class="row">
+            {% for row in table %}
+              <div class="col-md-6 col-xl-4 mb-5">
+                <div class="blog-card">
+                     <a href="bld/{{row.id}}">
+                      <div class="blog-img"><img src="{% static 'assets/img/blog/blog_1_1.jpg' %}" alt="blog image"></div>
+                     <div class="blog-content">
+                          <div class="blog-meta text-dark "><i class="fa-regular fa-user"></i> &nbsp;{{row.name}} &#8739; &nbsp;&nbsp;&nbsp; Compney Name : {{row.compneyname}}</div>
+                          <h3 class="blog-title">{{row.discription }}</a></h3>
+                          <div class="blog-bottom"><p class="text-dark"><i class="fa-regular fa-home"></i> {{row.address}} ,{{row.city}} ,{{row.state}}</p></div>
+                     </div>
+                     </a>
+                </div>
+           </div>
+              {% endfor %}
+         </div>
+         
+    </div>
+    <div class="shape-mockup leaf jump-reverse" data-bottom="7%" data-left="0"><img
+              src="{% static 'assets/img/shape/leaf_1.png' %}" alt="shape"></div>
+    <div class="shape-mockup leaf jump" data-bottom="20%" data-right="0"><img
+        src="{% static 'assets/img/shape/leaf_1.png' %}" alt="shape"></div>
+</section>
+{% endblock %}

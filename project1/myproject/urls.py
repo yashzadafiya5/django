@@ -20,4 +20,6 @@ urlpatterns=[
     path('login',views.login,name='login page'),
     path('register2',views.register2,name='register2 page'),
     path('changepassword',views.changepassword,name='changepassword page'),
+    path('ok/<str:email>',views.ok,name=' page'),
+    path('verify_login',views.verify_login,name=' page'),
 ]

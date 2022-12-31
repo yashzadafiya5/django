@@ -115,5 +115,46 @@
    <script src="{% static 'js/gmaps.min.js' %}"></script>
    <script src="{% static 'js/main.js' %}"></script>
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+
+   <script>
+	$.ajaxSetup({
+		data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
+	});
+	$('document').ready(function(){
+		//$('#output').load('http://127.0.0.1:8000/myproject/ok')
+			
+			$('#btnsubmitemail').click(function(){
+				var email=$('#email').val();
+				var url='http://127.0.0.1:8000/myproject/ok/'+ email;
+
+				$.get(url,function(data,status){
+					if (data=='0')
+						$('#newoutput').html('<h3>email was not valid</h3>').removeClass('bg-success').addClass('bg-danger')
+					else
+						$('#newoutput').html('<h3>please wait few seconds we are send a new password on you registered email address</h3>').removeClass('bg-danger').addClass('bg-success').fadeOut(6000,function(){
+							var loginurl='http://127.0.0.1:8000/myproject/login'
+							$(location).attr('href',loginurl)
+						});
+				});
+			});
+
+			$('#btnlogin').click(function(){
+				var loginurlss='verify_login'
+				console.log(loginurlss)
+				$.post(loginurlss,$('#loginform').serialize(),function(data,status){
+					if (data=='0')
+						$('#loginoutputs').html('<h1>your data is invalid</h1>').removeClass('bg-success').addClass('bg-danger');
+					else
+						$('#loginoutputs').html('<h1>successfully login</h1>').removeClass('bg-danger').addClass('bg-success').fadeOut(4000,function(){
+							homeurl='http://127.0.0.1:8000/myproject/index'
+							$(location).attr('href',homeurl);
+						});
+				})
+
+			});
+
+		
+	});
+   </script>
   </body>
 </html>

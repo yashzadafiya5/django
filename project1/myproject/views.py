@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import categorys,Products
+from .models import categorys,Products,User
 from .myform import RagisterForm as i
+from django.views.decorators.csrf import csrf_protect
 # Create your views here.
 
 def index(request):
@@ -54,3 +55,14 @@ def register2(request):
 def changepassword(request):
     return render(request,'changepassword2.html')
 
+
+def ok(request,email):
+    table=User.objects.all().filter(email=email)
+    return HttpResponse(len(table))
+
+
+def verify_login(request):
+    email = request.POST['loginemail']
+    password = request.POST['loginpassword']
+    table=User.objects.all().filter(email=email,password=password)
+    return HttpResponse(len(table))
