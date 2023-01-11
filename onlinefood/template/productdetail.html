@@ -65,7 +65,10 @@
                                              max="100" name="quantity" value="{{row.stock}}" title="Qty"> <button
                                              class="quantity-plus qty-btn"><i class="far fa-chevron-up"></i></button>
                                         <button class="quantity-minus qty-btn"><i
-                                                  class="far fa-chevron-down"></i></button><br></div><a class="as-btn" href="/food1/cart/{{row.id}}">Add to Cart</a>
+                                                  class="far fa-chevron-down"></i></button><br></div>
+                                                  
+                                                  <a class="as-btn btncarts" data-productid="{{row.id}}" >Add to Cart</a>
+                                                  
                               </div>
                               
                               <div class="share">

@@ -1,0 +1,30 @@
+{% extends 'base_template.html' %}
+{% load static %}
+{% block content %}
+        
+        <div class="conatiner" style="margin-top: 100px;">
+            <div class="row">
+                <div class="col-6 m-auto">
+                    <div class="card">
+                        <div class="card-header bg-primary">
+                            <h1 class="text-white">New Master Incident</h1>
+                            <h4 class="text-white">intial reporting</h4>
+                        </div>
+                        <div class="card-body">
+                            <form action="incident" method="POST" class="mt-2">
+                                {% csrf_token %}
+                                {{form.as_p}}
+                                <div class="d-flex">
+                                    <button type="submit" class="btn btn-outline-primary ">Save</button>&nbsp;
+                                    <button type="reset" class="btn btn-outline-danger ">Cancel</button>
+                                </div>
+                            </form>
+                            <div class="card-footer mt-2 ">
+                                <h3 class="p-3">{{message}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

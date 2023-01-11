@@ -494,6 +494,23 @@
      <script src="{% static 'assets/js/app.min.js' %}"></script>
      <script src="{% static 'assets/js/main.js' %}"></script>
 
+     <script>
+          $.ajaxSetup({
+               headers: { "X-CSRFToken": '{{csrf_token}}' }
+          });
+          $(document).ready(function(){
+               //alert('jquery exicuted........')
+               $('.btncarts').click(function(){
+                    var productid = $(this).attr("data-productid");                    
+                    var carturl='http://127.0.0.1:8000/food1/add_to_cart';
+                    var data = "productid=" + productid;
+                    
+                    $.get(carturl,data,function(response,status){
+                         console.log(response);
+                    });
+               });
+          });
+     </script>
 
 </body>
 </html>

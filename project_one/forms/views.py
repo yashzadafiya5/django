@@ -25,23 +25,7 @@ def getresult(request):
     elif choice==4:
         result = num1 / num2 
     return render(request,"getresult.html",{"answer":result})
-def postresult(request):
-    #process 
-    amount = str(request.POST['amount'])
-    rate = str(request.POST['rate'])
-    year =  str(request.POST['year'])
-    abc=string.ascii_letters
-    answer = ''
-    msg = ""
-    if amount.isdigit()==False or rate.isdigit()==False or year.isdigit()==False:
-        msg='one or more input give'
-    else:
-        msg='Simple Intrest '
-        amount = float(amount)
-        rate = float(rate)
-        year = float(year)
-        answer = (amount * rate * year) / 100 
-    return render(request,"postresult.html",{"result":answer,"message":msg})
+
 
 def formapi(request):
     forms=Myform

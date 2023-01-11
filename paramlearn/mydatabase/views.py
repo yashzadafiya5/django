@@ -12,7 +12,7 @@ def ragisterform(request):
         form=RagisterForm(request.POST)
         form.save()
         return render(request,'login.html',{'myform':forms})
-    else:
+    else:  
         form=RagisterForm()        
         return render(request,'ragister.html',{'form':form})
     

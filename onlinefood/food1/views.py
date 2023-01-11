@@ -55,6 +55,12 @@ def cart(request,productdetailid):
         total = row.sellprice * row.stock
     return render(request,'cart.html',{'table':table,'total':total})
 
+def add_to_cart(request):
+    productid=request.GET.get('productid')
+    Mycart.objects.create(productid=productid,quntity=1,billid=0,userid=-1)
+    
+    return HttpResponse("succfully worked.......")
+
 def cheakout(request,productdetailid,total):
     table=Myproduct.objects.all().filter(id=productdetailid)
     table1=Myuser.objects.all()

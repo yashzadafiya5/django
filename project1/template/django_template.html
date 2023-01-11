@@ -39,7 +39,7 @@
 			<nav class="navbar navbar-expand-lg navbar-light main_box">
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
-					<a class="navbar-brand logo_h" href="index"><h3>Online Shop</h3></a>
+					<a class="navbar-brand logo_h" href="/myproject/index"><h3>Online Shop</h3></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="icon-bar"></span>
@@ -53,7 +53,9 @@
 							<li class="nav-item active"><a class="nav-link" href="/myproject/category" style="color:black">Shop</a></li>
 							<li class="nav-item active"><a class="nav-link" href="/myproject/login" style="color:black">login</a></li>
 							<li class="nav-item active"><a class="nav-link" href="/myproject/register2" style="color:black">Register</a></li>
-							<li class="nav-item active"><a class="nav-link" href="/myproject/cart" style="color:black">Cart</a></li>
+							<li class="nav-item active">
+								<a class="nav-link" href="/myproject/cart" style="color:black">Cart <span class="badge badge-pill badge-warning" id="cart_count"></span></a>
+							</li>
 							<li class="nav-item active"><a class="nav-link" href="/myproject/cheakout" style="color:black">Check Out</a></li>
 							
 					</div>
@@ -122,7 +124,7 @@
 	});
 	$('document').ready(function(){
 		//$('#output').load('http://127.0.0.1:8000/myproject/ok')
-			
+			var count=0
 			$('#btnsubmitemail').click(function(){
 				var email=$('#email').val();
 				var url='http://127.0.0.1:8000/myproject/ok/'+ email;
@@ -153,6 +155,22 @@
 
 			});
 
+			$('.btnaddtocart').click(function(){
+				var productid=$(this).attr('data-productid')
+				url='/myproject/add_to_cart';
+				data='productid='+productid;
+				$.get(url,data,function(response,status){
+					console.log(response);
+					var cart_count=$('#cart_count').html()
+					if (cart_count=='')
+						count=1
+					else
+					count+=1	
+					$('#cart_count').html(count)
+				});
+
+				
+			});
 		
 	});
    </script>

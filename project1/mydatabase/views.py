@@ -36,15 +36,15 @@ def ragister(request):
         return render(request,'ragister.html',{'form':form})
     
 def login(request):
-    if request.method=='POST':
-        form=loginform(request.POST)
-        table=user.objects.filter(email=request.POST['email'],password=request.POST['password'])
-        if table.count()==0:
-            return render(request,'login.html',{'form':form,'message':'invalid Login Attempt'})
-        else:
-            request.session['id']=table.first().id
-            return render(request,'home.html')
-    else:
+    # if request.method=='POST':
+    #     form=loginform(request.POST)
+    #     table=user.objects.filter(email=request.POST['email'],password=request.POST['password'])
+    #     if table.count()==0:
+    #         return render(request,'login.html',{'form':form,'message':'invalid Login Attempt'})
+    #     else:
+    #         request.session['id']=table.first().id
+    #         return render(request,'home.html')
+    # else:
         form=loginform()
         return render(request,'login.html',{'form':form})
 def forgetpassword(request):

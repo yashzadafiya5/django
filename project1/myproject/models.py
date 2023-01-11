@@ -18,3 +18,11 @@ class User(models.Model):
     password=models.TextField(max_length=128)
     mobile=models.TextField(max_length=10)
     
+ 
+class Cart(models.Model):
+    productid=models.IntegerField()
+    userid=models.IntegerField()
+    quntity=models.IntegerField()
+    billid=models.IntegerField()
+    
+    
