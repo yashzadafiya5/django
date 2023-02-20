@@ -25,4 +25,28 @@ class Cart(models.Model):
     quntity=models.IntegerField()
     billid=models.IntegerField()
     
+class Bill(models.Model):
+    name=models.TextField(max_length=124)
+    address=models.TextField(max_length=200)
+    state=models.TextField(max_length=40)
+    city=models.TextField(max_length=40)
+    pincode=models.TextField(max_length=20)
+    mobile=models.CharField(max_length=20)
+    productid=models.IntegerField()
+    userid=models.IntegerField()
+    quntity=models.IntegerField()
+    payment_mode=models.IntegerField()
+    billdate=models.DateField(auto_now_add=True,null=True,blank=True)
+    pincode=models.IntegerField()
+    total=models.IntegerField()
+    
+    
+class City(models.Model):
+    cname=models.TextField(max_length=128)
+    cpincode=models.IntegerField()
+    
+class Book(models.Model):
+    id=models.IntegerField(primary_key=True)
+    title=models.TextField(max_length=200)
+    author=models.TextField(max_length=200)
     

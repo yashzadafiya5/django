@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-
+from django.urls import re_path as url 
+from lone import views 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('lone/', include('lone.urls')),
     path('myforms/', include('myforms.urls')),
+    path('student/', views.StudentView.as_view()),
 ]

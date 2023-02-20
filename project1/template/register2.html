@@ -19,25 +19,28 @@
 				<div class="col-lg-6 m-auto">
 					<div class="login_form_inner" style="margin-top:10px;">
 						<h3>Register</h3>
-						<form class="row login_form" action="login" method="post" id="contactForm" novalidate="novalidate">
+						<form class="row login_form" method="post" id="registerform">
                             {% csrf_token %}
 							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="name" name="name" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
+								<input type="email" class="form-control" id="registeremail" name="registeremail" placeholder="email">
 							</div>
 							<div class="col-md-12 form-group">
-								<input type="email" class="form-control" id="email" name="email" placeholder="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'email'">
+								<input type="tel" class="form-control" id="registermobile" name="registermobile" placeholder="Mobile">
 							</div>
 							<div class="col-md-12 form-group">
-								<input type="password" class="form-control" id="password" name="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
+								<input type="password" class="form-control" id="registerpassword" name="registerpassword" placeholder="Password">
 							</div>
 							<div class="col-md-12 form-group">
-								<input type="password" class="form-control" id="confirmpassword" name="confirm password" placeholder="confirmpassword" onfocus="this.placeholder = ''" onblur="this.placeholder = 'confirmpassword'">
+								<input type="password" class="form-control" id="registerconfirmpassword" name="registerconfirmpassword" placeholder="confirmpassword" >
 							</div>
 							<div class="col-md-12 form-group">
-								<button type="submit" value="submit" class="primary-btn">Register</button>
+								<button type="button" value="register" class="primary-btn" id="btnregister">Register</button>
 								<a href="forgotpassword">Forgot Password?</a>
 							</div>
 						</form>
+						<div id="output">
+							{{message}}
+						</div>
 					</div>
 				</div>
 			</div>

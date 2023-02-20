@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test 3</title>
+</head>
+<body>
+    
+    <form>
+        <h2>Student Result</h2>
+        <p>Id : <input type="number" placeholder="Enter your Id" required/></p>
+        <p>Name : <input type="text" placeholder="Enter Student Name" required/></p>
+        <p>Phone_no : <input type="number" placeholder="Enter Mobile number" required/></p>
+        <p>Email : <input type="email" placeholder="Enter your Emailid" required/></p>
+        <p>Roll_no : <input type="number" placeholder="Enter Your Rollno" required/></p>
+        <p>English : <input type="number" name="english" id="english" required/></p>
+        <p>Gujarati : <input type="number" name="gujarati" id="gujarati" required/></p>
+        <p>Hindi : <input type="number" name="hindi" id="hindi" required/></p>
+        <p>Social_science : <input type="number" name="social_science" id="social_science" required/></p>
+        <p>Maths : <input type="number" name="maths" id="maths" required/></p>
+        <p><input type="button" value="Click Here" onclick="Evg()" ></p>
+
+        <p>Total : <input id="total"></p>
+        <p>Percentage : <input id="percentage"></p>
+    </form>
+
+    <script>
+        function Evg() {
+            var english,gujarati,hindi,social_science,maths,percentage,Total;
+
+            english = parseInt(document.getElementById("english").value);
+            gujarati = parseInt(document.getElementById("gujarati").value);
+            hindi = parseInt(document.getElementById("hindi").value);
+            social_science = parseInt(document.getElementById("social_science").value);
+            maths= parseInt(document.getElementById("maths").value);
+            Total = (english + gujarati + hindi + social_science + maths );
+            percentage = (parseInt(Total)*100)/500
+            document.getElementById("total").value = Total;
+            document.getElementById("percentage").value = percentage;
+        }
+        
+    </script>
+</body>
+</html>

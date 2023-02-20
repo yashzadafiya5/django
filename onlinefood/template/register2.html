@@ -1,0 +1,51 @@
+{% extends 'django_template.html' %}
+{% load static %}
+{% block content %}
+
+<div class="breadcumb-wrapper" data-bg-src="{% static 'assets/img/breadcumb/breadcumb-bg.jpg' %}">
+    <div class="container z-index-common">
+        <div class="breadcumb-content">
+            <h1 class="breadcumb-title">Register <span class="font-style text-theme2">With us</span></h1>
+
+        </div>
+    </div>
+</div>
+<section class="space bg-smoke2" id="contactFormSec">
+    <div class="container">
+        <form method="post" class="contact-form ajax-contact col-lg-6 m-auto" id="registerform">
+            {% csrf_token %}
+            <h3 class="form-title">Register</h3>
+            <div class="row">
+                <div class="form-group col-md-12"><input type="text" class="form-control" name="registername" id="registername"
+                        placeholder="Your Name"> <i class="fal fa-user"></i></div>
+                <div class="form-group col-md-12"><input type="email" class="form-control" name="registeremail" id="registeremail"
+                        placeholder="Email Address"> <i class="fal fa-envelope"></i></div>
+                <div class="form-group col-12"> <input type="password" name="registerpassword" id="registerpassword" placeholder="Password"><i class="fal fa-key"></i></div>
+                <div class="form-group col-md-6"><input type="tel" class="form-control" name="registernumber" id="registernumber"placeholder="Phone Number"> <i class="fal fa-phone"></i></div>
+                <div class="form-group col-md-6"><input type="text" class="form-control" name="registercity" id="registercity"
+                        placeholder="City"> <i class="fal fa-city"></i></div>
+                <div class="form-group col-md-6"><input type="text" class="form-control" name="registerstate" id="registerstate"
+                        placeholder="State"> <i class="fal fa-city"></i></div>
+                <div class="form-group col-md-6"><input type="number" class="form-control" name="registerpincode" id="registerpincode"
+                        placeholder="Pincode"> <i class="fal fa-map-pin"></i></div>
+                <div class="form-group col-12"><textarea name="registeraddress" id="registeraddress" cols="5" rows="2"
+                        class="form-control" placeholder="Your Address"></textarea> <i class="fal fa-address-card "></i>
+                </div>        
+                <div class="form-btn text-center col-12"><button type="button" id="btnregister" class="as-btn">Register With Us</button></div>
+            </div>
+            <h4 id="register_output" class="text-center p-2 mt-2"></h4>
+        </form>
+    </div>
+
+    <div class="shape-mockup leaf jump-reverse" data-bottom="7%" data-left="0"><img
+            src="{% static 'assets/img/shape/leaf_1.png' %}" alt="shape"></div>
+    <div class="shape-mockup leaf jump" data-bottom="1%" data-right="0"><img
+            src="{% static 'assets/img/shape/leaf_2.png' %}" alt="shape"></div>
+            
+    <div class="shape-mockup leaf jump-reverse" data-bottom="60%" data-left="10"><img
+            src="{% static 'assets/img/shape/leaf_1.png' %}" alt="shape"></div>
+    <div class="shape-mockup leaf jump" data-bottom="50%" data-right="10"><img
+            src="{% static 'assets/img/shape/leaf_2.png' %}" alt="shape"></div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'django_template.html' %}
+{% load static %}
+{% block content %}
+
+<div class="breadcumb-wrapper" data-bg-src="{% static 'assets/img/breadcumb/breadcumb-bg.jpg' %}">
+    <div class="container z-index-common">
+        <div class="breadcumb-content">
+            <h1 class="breadcumb-title">Log<span class="font-style text-theme2">in</span></h1>
+
+        </div>
+    </div>
+</div>
+<section class="space bg-smoke2" id="contactFormSec">
+    <div class="container">
+        <form method="post" class="contact-form ajax-contact col-lg-5 m-auto" id="loginform">
+                {% csrf_token %}
+            <h3 class="form-title">Log in</h3>
+            <div class="row">
+                <div class="form-group col-12"><input type="email" class="form-control" name="login_email" id="login_email"
+                        placeholder="Email Address"> <i class="fal fa-envelope"></i></div>
+                <div class="form-group col-12"> <input type="password" name="login_password" id="login_password" placeholder="Password"><i class="fal fa-key"></i></div>
+                <div class="form-btn text-center col-12"><button type="button" class="as-btn" id="btnlogin">Log in</button></div>
+            </div>
+            <h4 id="Login_output" class="text-center p-2 mt-2"></h4>
+        </form>
+        
+    </div>
+
+    <div class="shape-mockup leaf jump-reverse" data-bottom="7%" data-left="0"><img
+            src="{% static 'assets/img/shape/leaf_1.png' %}" alt="shape"></div>
+    <div class="shape-mockup leaf jump" data-bottom="1%" data-right="0"><img
+            src="{% static 'assets/img/shape/leaf_2.png' %}" alt="shape"></div>
+            
+    <div class="shape-mockup leaf jump-reverse" data-bottom="60%" data-left="10"><img
+            src="{% static 'assets/img/shape/leaf_1.png' %}" alt="shape"></div>
+    <div class="shape-mockup leaf jump" data-bottom="50%" data-right="10"><img
+            src="{% static 'assets/img/shape/leaf_2.png' %}" alt="shape"></div>
+</section>
+
+{% endblock %}

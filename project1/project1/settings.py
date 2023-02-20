@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'forms.apps.FormsConfig',
     'mydatabase.apps.MydatabaseConfig',
     'myproject.apps.MyprojectConfig',
+    'rest_framework'
     
 ]
 

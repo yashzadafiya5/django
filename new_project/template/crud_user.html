@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+
+    <style>
+        .open-button {
+            background-color: #555;
+            color: white;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            position: fixed;
+        }
+
+        /* The popup form - hidden by default */
+        .form-popup {
+            display: none;
+            position: fixed;
+            top: 80px;
+            right: 15px;
+            z-index: 9;
+        }
+
+        /* Add styles to the form container */
+        .form-container {
+            max-width: 800px;
+            padding: 20px;
+            background-color: #13b77d;
+            margin: auto;
+        }
+
+
+
+        /* Set a style for the submit/login button */
+        .form-container .btn {
+            background-color: #04AA6D;
+            color: white;
+            opacity: 0.8;
+        }
+
+        /* Add a red background color to the cancel button */
+        .form-container .cancel {
+            background-color: red;
+        }
+
+        /* Add some hover effects to buttons */
+        .form-container .btn:hover,
+        .open-button:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <div class="container">
+        <div class="row flex-lg-nowrap">
+            <div class="col">
+                <div class="row flex-lg-nowrap mt-5">
+                    <div class="col mb-3">
+                        <div class="e-panel card">
+                            <div class="card-body">
+                                <div class="card-title d-flex justify-content-between">
+                                    <h3 class="mr-2"><span>User</span><small class="px-1">Details</small></h3>
+                                    <button type="button" class=" btn text-bg-success text-end" onclick="openForm()">Add New User</button>
+                                </div>
+                                <div class="e-table">
+                                    <div class="table-responsive table-lg mt-3">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th class="max-width">id</th>
+                                                    <th class="max-width">Name</th>
+                                                    <th class="sortable ">Date Of Birth</th>
+                                                    <th class="sortable ">primary_contact_number</th>
+                                                    <th class="sortable ">secondary_contact_number</th>
+                                                    <th class="sortable ">Currency($,&#8377;)</th>
+                                                    <th class="text-center">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for row in table %}
+                                                <tr>
+                                                    <td class="text-nowrap align-middle">{{row.id}}</td>
+                                                    <td class="text-nowrap align-middle">{{row.email}}</td>
+                                                    <td class="text-nowrap align-middle">
+                                                        <span>{{row.date_of_birth}}</span></td>
+                                                    <td class="text-nowrap align-middle">
+                                                        <span>{{row.primary_contact_number}}</span></td>
+                                                    <td class="text-nowrap align-middle">
+                                                        <span>{{row.secondary_contact_number}}</span></td>
+                                                    <td class="text-nowrap align-middle"><span>{{row.currency}}</span>
+                                                    </td>
+                                                    <td class="text-center align-middle">
+                                                        <div class="btn-group align-top">
+
+                                                            <button
+                                                                class="btn btn-sm btn-outline-secondary badge text-dark edit"
+                                                                type="button" data-userid='{{row.id}}'
+                                                                onclick="editformopen()">Edit</button>
+                                                            <button
+                                                                class="btn btn-sm btn-outline-secondary badge text-danger delete"
+                                                                type="button" data-userid="{{row.id}}"><i class="fa fa-trash "></i></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                {% endfor %}
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="form-popup fixed-bottom" id="myForm">
+        <form action="" method="post" id="adduserform" class="form-container">
+            {% csrf_token %}
+            <h1>Add user</h1>
+            <label for="email" class="form-label"><b>email</b></label>
+            <input type="email" placeholder="Enter Your email" name="email" class="form-control" required>
+
+            <label for="dob" class="form-label mt-2"><b>Date Of Birth</b></label>
+            <input type="date" placeholder="Enter Your Birth Date" name="dob" class="form-control" required>
+            <label for="pcn" class="form-label mt-2"><b>primary_contact_number</b></label>
+            <input type="tel" placeholder="Enter Your Primary Contact Number" name="pcn" class="form-control" required>
+            <label for="scn" class="form-label mt-2"><b>secondary_contact_number</b></label>
+            <input type="tel" placeholder="Enter Your Secondary Contact Number" name="scn" class="form-control"
+                required>
+            <label for="cur" class="form-label mt-2"><b>Currency($,&#8377;)</b></label>
+            <input type="text" placeholder="Enter Your Currency In($,&#8377;)" name="cur" class="form-control" required>
+
+            <button type="button" class="btn mt-3" id="adduser">Add User</button>
+            <button type="button" class="btn cancel mt-3" onclick="closeForm()">Close</button>
+            <div id="output"></div>
+        </form>
+
+    </div>
+    <div class="form-popup fixed-bottom" id="edituserform">
+        <form  method="post" id="editform" class="form-container">
+            {% csrf_token %}
+            <h1>Edit User Details</h1>
+            <label for="email" class="form-label"><b>email</b></label>
+            <input type="email" placeholder="Enter Your email" name="email" class="form-control" id="email" required>
+
+            <label for="dob" class="form-label mt-2"><b>Date Of Birth</b></label>
+            <input type="date" placeholder="Enter Your Birth Date" name="dob" class="form-control" id="dob" required>
+            <label for="pcn" class="form-label mt-2"><b>primary_contact_number</b></label>
+            <input type="tel" placeholder="Enter Your Primary Contact Number" name="pcn" class="form-control" id="pcn" required>
+            <label for="scn" class="form-label mt-2"><b>secondary_contact_number</b></label>
+            <input type="tel" placeholder="Enter Your Secondary Contact Number" name="scn" class="form-control" id="scn"
+                required>
+            <label for="cur" class="form-label mt-2"><b>Currency($,&#8377;)</b></label>
+            <input type="text" placeholder="Enter Your Currency In($,&#8377;)" id="cur" name="cur" class="form-control" required>
+            <input type="hidden" name="id" id="id" >
+            <button type="submit" class="btn mt-3 " >edit User</button>
+            <button type="button" class="btn cancel mt-3" onclick="editformclose()">Close</button>
+            <div id="output"></div>
+        </form>
+
+    </div>
+    <!-- Footer -->
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+
+        function editformopen() {
+            document.getElementById("edituserform").style.display = "block";
+        }
+
+        function editformclose() {
+            document.getElementById("edituserform").style.display = "none";
+        }
+
+        $.ajaxSetup({
+            data: { csrfmiddlewaretoken: '{{ csrf_token }}' },
+        });
+        $('document').ready(function () {
+            //$('#output').load('http://127.0.0.1:8000/myproject/ok')
+            $('#adduser').click(function () {
+                var add_user = 'add_user'
+                $.post(add_user, $('#adduserform').serialize(), function (data, status) {
+                    if (data == '-1') {
+                        $('#output').html('invalid user detail....').addClass('bg-danger text-white p-3')
+                    }
+                    else if (data == '1') {
+                        $('#output').html('User Added Successfull').removeClass('bg-danger').addClass('bg-success text-white').fadeOut(2000, function () {
+                            $(location).attr('href', 'index')
+                        });
+
+                    }
+                });
+            });
+
+            $('.edit').click(function () {
+                var newuserid = $(this).attr('data-userid');
+                console.log(newuserid);
+                $('#id').val() = newuserid
+                var url = `/app_one/edit_user/${newuserid}`
+                $('#editform').attr('action',"/app_one/edit_user/"+newuserid)
+            });
+        
+            $('.delete').click(function(){
+                var row = $(this).parent().parent().parent();
+                var newuserid = $(this).attr('data-userid');
+                var url = 'http://127.0.0.1:8000/app_one/delete_user/' + newuserid;
+				$.get(url, function (data, status) {
+					$(row).remove().fadeOut(3000);
+					
+				});
+            })
+        });
+
+    </script>
+</body>
+
+</html>

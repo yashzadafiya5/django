@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <form>
+      <h2>Student Result</h2>
+      <p>Id : <input type="number" placeholder="Enter your Id" id="id" required/></p>
+      <p>Name : <input type="text" placeholder="Enter Student Name" id="name" required/></p>
+      <p>Phone_no : <input type="number" placeholder="Enter Mobile number" id="phoneno" required/></p>
+      <p>Email : <input type="email" placeholder="Enter your Emailid" id="email" required/></p>
+      <p>Roll_no : <input type="number" placeholder="Enter Your Rollno" id="rollno" required/></p>
+      <p>English : <input type="number" name="english" id="english" required/></p>
+      <p>Gujarati : <input type="number" name="gujarati" id="gujarati" required/></p>
+      <p>Hindi : <input type="number" name="hindi" id="hindi" required/></p>
+      <p>Social_science : <input type="number" name="social_science" id="social_science" required/></p>
+      <p>Maths : <input type="number" name="maths" id="maths" required/></p>
+      <p><input type="button" value="Click Here" onclick="arg()" ></p>
+
+      <!-- <p>Total : <input id="total"></p>
+      <p>Percentage : <input id="percentage"></p> -->
+  </form>
+
+
+</body>
+
+</html>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> 
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      
+      class myClass {
+        constructor(id,name,phoneno,email,rollno,english_mark,gujarati_mark,hindi_mark,social_scienece_mark,maths_mark) {
+        this.id=id
+        this.name=name
+        this.phoneno=phoneno
+        this.email=email
+        this.rollno=rollno
+        this.english_mark=english_mark
+        this.gujarati_mark=gujarati_mark
+        this.hindi_mark=hindi_mark
+        this.social_scienece_mark=social_scienece_mark
+        this.maths_mark=maths_mark
+        }
+        
+        setid(id)
+        {
+        this.id=id
+        }
+        getid()
+        {
+        return id
+        }
+        
+        setname(name)
+        {
+        this.name=name
+        }
+        getname()
+        {
+        return name
+        }
+        
+        setphone(phone)
+        {
+        this.phone=phone
+        }
+        getphone()
+        {
+        return phone
+        }
+        
+        setemail(email)
+        {
+        this.email=email
+        }
+        getemail()
+        {
+        return email
+        }
+        
+        setrollno(rollno)
+        {
+        this.rollno=rollno
+        }
+        getrollno()
+        {
+        return rollno
+        }
+        
+        setenglish_mark(english_mark)
+        {
+        this.english_mark=english_mark
+        }
+        getenglish_mark()
+        {
+        return english_mark
+        }
+        
+        setgujarati_mark(gujarati_mark)
+        {
+        this.gujarati_mark=gujarati_mark
+        }
+        getgujarati_mark()
+        {
+        return gujarati_mark
+        }
+        
+        sethindi_mark(hindi_mark)
+        {
+        this.hindi_mark=hindi_mark
+        }
+        gethindi_mark()
+        {
+        return hindi_mark
+        }
+        
+        setsocial_scienece_mark(social_scienece_mark)
+        {
+        this.social_scienece_mark=social_scienece_mark
+        }
+        getsocial_scienece_mark()
+        {
+        return social_scienece_mark
+        }
+        
+        setmaths_mark(maths_mark)
+        {
+        this.maths_mark=maths_mark
+        }
+        getmaths_mark()
+        {
+        return maths_mark
+        }
+        
+        gettotal()
+        {
+        return english_mark+social_scienece_mark+maths_mark+hindi_marks+gujarati_marks;
+        }
+        
+        getpercentage()
+        {
+        return gettotal / 5
+        }
+        
+        }
+        function arg(){
+          var id = document.getElementById("id").value;
+          var name = document.getElementById("name").value;
+          var phoneno = document.getElementById("phoneno").value;
+          var email = document.getElementById("email").value;
+          var rollno = document.getElementById("rollno").value;
+          var english_mark = parseInt(document.getElementById("english").value);
+          var gujarati_mark = parseInt(document.getElementById("gujarati").value);
+          var hindi_mark = parseInt(document.getElementById("hindi").value);
+          var social_scienece_mark = parseInt(document.getElementById("social_science").value);
+          var maths= parseInt(document.getElementById("maths").value);
+          //var new1=myClass(id,name,phoneno,email,rollno,english_mark,gujarati_mark,hindi_mark,social_scienece_mark,maths)
+          //console.log(id,name,phoneno,email,rollno,english_mark,gujarati_mark,hindi_mark,social_scienece_mark,maths)
+         
+          var a1= myClass(id,name,phoneno,email,rollno,english_mark,gujarati_mark,hindi_mark,social_scienece_mark,maths_mark) 
+          console.log(a1.setid())
+        }
+         
+    </script>
+   
+  </body>
+</html>

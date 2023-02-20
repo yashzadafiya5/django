@@ -18,6 +18,9 @@ class Myshopkeper(models.Model):
     image=models.ImageField(upload_to='pics')
     isdeleted=models.IntegerField(default=0,null=True)
     
+    def __str__(self):
+        return (self.name)
+    
 class Mybld(models.Model):
     shopkeperid=models.IntegerField()
     title=models.TextField(max_length=128)
@@ -25,6 +28,8 @@ class Mybld(models.Model):
     discription=models.TextField(max_length=200)
     isdeleted=models.IntegerField(default=0,null=True)
 
+    def __str__(self) :
+        return (self.title)
     
 class Mycategory(models.Model):
     bldid=models.IntegerField()
@@ -63,20 +68,20 @@ class Mybill(models.Model):
     city=models.TextField(max_length=40)
     pincode=models.TextField(max_length=20)
     mobile=models.CharField(max_length=20)
-    productid=models.IntegerField()
     userid=models.IntegerField()
     quntity=models.IntegerField()
     payment_mode=models.IntegerField()
-    billdate=models.DateField(auto_now_add=True,null=True,blank=True)
-    pincode=models.IntegerField()
     total=models.IntegerField()
-    
-
+    billdate=models.DateField(auto_now_add=True,null=True,blank=True)
+  
 class Mycart(models.Model):
     productid=models.IntegerField()
+    price=models.IntegerField()
     quntity=models.IntegerField()
     billid=models.IntegerField()
     userid=models.IntegerField()
     
 
-    
+class Book(models.Model):
+    title=models.TextField(max_length=200)
+    author=models.TextField(max_length=200)

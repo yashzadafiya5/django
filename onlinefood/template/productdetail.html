@@ -1,6 +1,7 @@
 {% extends 'django_template.html' %}
 {% load static %}
-{% block content %}
+{% block content %} 
+
 
      <div class="breadcumb-wrapper" data-bg-src="{% static 'assets/img/breadcumb/breadcumb-bg.jpg' %}">
           <div class="container z-index-common">
@@ -67,7 +68,7 @@
                                         <button class="quantity-minus qty-btn"><i
                                                   class="far fa-chevron-down"></i></button><br></div>
                                                   
-                                                  <a class="as-btn btncarts" data-productid="{{row.id}}" >Add to Cart</a>
+                                                  <a class="as-btn btncarts" data-productid="{{row.id}}" style="cursor: pointer;" data-productprice="{{row.sellprice}}" >Add to Cart</a>
                                                   
                               </div>
                               

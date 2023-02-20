@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+        position: absolute;
+        width: 740px;
+        height: 2500px;
+        /*background: url('Image.jpg');*/
+        border: 1px solid #000000;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+        nav {
+          background-color: #a6a1a1; /* Set the background color of the navbar */
+          overflow: hidden; /* Clear the floats */
+        }
+        
+        nav ul {
+          list-style-type: none; /* Remove the bullet points from the list */
+          margin: 0; /* Remove any margin or padding */
+          padding: 0;
+          display: flex; 
+          /* Display the list items horizontally */
+        }
+        
+        nav li {
+          float: left; /* Float the list items to the left */
+        }
+        
+        nav li a {
+          display: block; /* Display the links as*/
+          color: white;
+          text-decoration: none;
+        }
+        li{
+          margin: auto;
+          cursor: pointer;
+        }
+        
+        
+        .slider {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+  
+          }
+            .slide {
+              position: absolute;
+              height: 100%;
+              width: 100%;
+              transition: opacity 0.5s ease-in-out;
+            }
+            
+            .slide1 {
+              background-image: url('slider1.jpg');
+              background-size: 800px;
+              width: 800px;
+              height: 800px;
+            }
+            
+            .slide2 {
+              background-image: url('slider2.jpg');
+              background-size: 800px;
+              width: 800px;
+              height: 800px;
+              opacity: 0;
+            }
+            
+            .slide3 {
+              background-image: url('slider3.jpg');
+              background-size: 800px;
+              width: 800px;
+              height: 800px;
+              opacity: 0;
+            }
+            
+            .slider:hover .slide {
+              transition: opacity 0.9s ease-in-out;
+            }
+            
+            .slider:hover .slide2 {
+              
+              opacity: 1;
+            }
+            
+            .slider:hover .slide3 {
+              opacity: 1;
+            }
+            
+            .slide-text {
+              position: absolute;
+              top: 80px;
+              left: 200px;
+              padding: 5px;
+              box-sizing: border-box;
+              transition: all 0.5s;
+              border: 2px solid black;
+              overflow: hidden;
+              margin: auto;
+            }
+            
+            .slide-text h1 {
+              position: absolute;
+              top: 0;
+              left: 0px;
+              padding: 5px;
+              box-sizing: border-box;
+              transition: all 0.5s;
+              font-size: 36px;
+              margin: 0;
+              margin-bottom: 20px;
+            }
+            
+            .slide-text p {
+              font-size: 18px;
+              margin-top: 40px;
+              line-height: 1.5;
+            }
+            
+            .slide-text.active {
+              left: 0;
+            }
+            
+            .slider > .slide-text:not(.active) {
+              display: none;
+            }
+            .product-box {
+                width: 300px;
+                height: 400px;
+                background-color: #fff;
+                font-size: 16px;
+                padding: 20px;
+                margin: 10px;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+                border-radius: 5px;
+                flex-wrap: wrap;
+             }
+             .product-box img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 5px;
+             }
+             .product-box h3 {
+                margin-top: 10px;
+                margin-bottom: 5px;
+                font-size: 20px;
+             }
+             .product-box p {
+                margin: 5px 0;
+             }
+             .product-box button {
+                background-color: #007bff;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+             }
+             .product-box button:hover {
+                background-color: #0056b3;
+             }
+             .image-text-container {
+                width: 100%;
+                height: 14%;
+                margin: 20px 0;
+                padding: 10px;
+                box-sizing: border-box;
+                border: 2px solid black;
+             }
+             .image-text-container img {
+                width: 50%;
+                height: auto;
+                float: left;
+                margin-right: 20px;
+             }
+             .image-text-container p {
+                font-size: 16px;
+                color: #333;
+             }
+             
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul style="padding:12px;">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="slider">
+        <div class="slide slide1">
+          <div class="slide-text">
+            <h1>Slide 1</h1>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+        </div>
+        <div class="slide slide2">
+          <div class="slide-text">
+            <h1>Slide 2</h1>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+        </div>
+        <div class="slide slide3">
+          <div class="slide-text">
+            <h1>Slide 3</h1>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+        </div>
+      </div>
+
+      <h1 style="text-align: center;">Solitaier Products</h1>
+        <div class="product-container" style=" display:flex; flex-wrap: wrap;">
+        <div class="product-box">
+           <img src="slider1.jpg" height="400px" width="200px" alt="Product 1">
+           <h3>Product 1 Name</h3>
+           <p>$19.99</p>
+           <button>Add to Cart</button>
+        </div>
+        <div class="product-box">
+           <img src="slider2.jpg" height="400px" width="200px" alt="Product 2">
+           <h3>Product 2 Name</h3>
+           <p>$29.99</p>
+           <button>Add to Cart</button>
+        </div>
+        <div class="product-box">
+           <img src="slider3.jpg" height="400px" width="200px" alt="Product 3">
+           <h3>Product 3 Name</h3>
+           <p>$39.99</p>
+           <button>Add to Cart</button>
+        </div>
+        <div class="product-box">
+           <img src="slider3.jpg" alt="Product 3">
+           <h3>Product 3 Name</h3>
+           <p>$39.99</p>
+           <button>Add to Cart</button>
+        </div>
+     </div>
+     <div class="image-text-container">
+        <img src="slider1.jpg" alt="Image" height="400px" width="400px">
+        <p>Text alongside the image</p>
+     </div>
+      
+
+</body>
+
+</html>

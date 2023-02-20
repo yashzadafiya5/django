@@ -1,0 +1,59 @@
+{% extends 'django_template.html' %}
+{% load static %}
+{% block content %}
+
+      <section class="posts blog-2col">
+        <div class="container">
+          <div class="row justify-content-center">
+             {% for row in table %}  
+                <div class="col-12 col-md-6">
+                  <div class="post-block post-classic">
+                    <div class="post-img"><img src="../media/{{row.image}}" alt="post image"></div>
+                    <div class="post-detail"><a class="post-title regular" href="App_One/blogdetail/{{row.id}}">North Dakota Learns From Norway</a>
+                      <div class="post-credit">
+                        <div class="author"><a class="author-avatar" href="#"><img src="{% static 'assets/images/avatar/avatar-1.png' %}" alt="auhtor"></a>
+                          <h5 class="author-name">Lucas Norman</h5>
+                        </div>
+                        <h5 class="upload-day">February 17, 2019</h5>
+                        <div class="post-tag"><a href="index-2.html">tech</a></div>
+                      </div>
+                      <p class="post-describe">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                    </div>
+                  </div>
+                </div>
+             {% endfor %}
+            
+            
+            <div class="col-12 text-center">
+              <button class="normal-btn" id="load-more">Load more</button>
+            </div>
+          </div>
+        </div>
+      </section><!--End posts-->
+      <section class="instagram">
+        <div class="container">
+          <div class="instagram-posts"><a class="instagram-img_block" href="https://www.instagram.com/"><img src="{% static 'assets/images/instagram/1.png' %}" alt="instagram post">
+              <div class="instagram-post_block"><i class="fab fa-instagram"></i>
+                <p>Pisen_Instagram</p>
+              </div></a><a class="instagram-img_block" href="https://www.instagram.com/"><img src="{% static 'assets/images/instagram/2.png' %}" alt="instagram post">
+              <div class="instagram-post_block"><i class="fab fa-instagram"></i>
+                <p>Pisen_Instagram</p>
+              </div></a><a class="instagram-img_block" href="https://www.instagram.com/"><img src="{% static 'assets/images/instagram/3.png' %}" alt="instagram post">
+              <div class="instagram-post_block"><i class="fab fa-instagram"></i>
+                <p>Pisen_Instagram</p>
+              </div></a><a class="instagram-img_block" href="https://www.instagram.com/"><img src="{% static 'assets/images/instagram/4.png' %}" alt="instagram post">
+              <div class="instagram-post_block"><i class="fab fa-instagram"></i>
+                <p>Pisen_Instagram</p>
+              </div></a><a class="instagram-img_block" href="https://www.instagram.com/"><img src="{% static 'assets/images/instagram/5.png' %}" alt="instagram post">
+              <div class="instagram-post_block"><i class="fab fa-instagram"></i>
+                <p>Pisen_Instagram</p>
+              </div></a><a class="instagram-img_block" href="https://www.instagram.com/"><img src="{% static 'assets/images/instagram/3.png' %}" alt="instagram post">
+              <div class="instagram-post_block"><i class="fab fa-instagram"></i>
+                <p>Pisen_Instagram</p>
+              </div></a><a class="instagram-img_block" href="https://www.instagram.com/"><img src="{% static 'assets/images/instagram/2.png' %}" alt="instagram post">
+              <div class="instagram-post_block"><i class="fab fa-instagram"></i>
+                <p>Pisen_Instagram</p>
+              </div></a></div>
+        </div>
+      </section><!--End instagram-->
+  {% endblock %}

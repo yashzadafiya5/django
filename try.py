@@ -1,12 +1,15 @@
-import itertools
 
-num = [1, 3]
-value = [2, 4]
+# lambda_temp=lambda a,b:a+b
 
-# iterates over 3 lists and executes 
-# 2 times as len(value)= 2 which is the
-# minimum among all the three 
-for a in zip(num, value):
-    
-    print (a)
-    
+# print(lambda_temp(10,20))
+
+# l=[1,2,3,4,5]
+
+# temp_set=[]
+# for i in l:
+#     result=i*i*i
+#     temp_set.append(result)
+
+# print(tuple(temp_set))
+
+insert into student_detail(id,name,address)values(1,'yash','ahemdabad');

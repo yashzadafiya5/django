@@ -28,6 +28,7 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {% for row in table %}
                             <tr>
                                 <td>
                                     <div class="media">
@@ -35,24 +36,24 @@
                                             <img src="{% static 'img/cart.jpg' %}" alt="">
                                         </div>
                                         <div class="media-body">
-                                            <p>Minimalistic shop for multipurpose use</p>
+                                            <p>{{row.title}}</p> <button data-cartid="{{row.id}}" data-price="{{row.price}}"  data-quantity="{{row.quntity}}"  class="btn btn-warning btndelete">Delete</button>
                                         </div>
                                     </div>
                                 </td>
                                 <td>
-                                    <h5>$360.00</h5>
+                                    <h5>&#8377; {{row.price}}</h5>
                                 </td>
                                 <td>
                                     <div class="product_count">
-                                        <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:" class="input-text qty">
-                                        <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;" class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
-                                        <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;" class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
+                                        <input type="text" name="qty" value="{{row.quntity}}">
+                                       
                                     </div>
                                 </td>
                                 <td>
-                                    <h5>$720.00</h5>
+                                    <h5>&#8377; {% widthratio 12 1 12 %}</h5>
                                 </td>
                             </tr>
+                            {% endfor %}
                      
                            
                             <tr>
@@ -66,7 +67,7 @@
                                     <h5>Subtotal</h5>
                                 </td>
                                 <td>
-                                    <h5>$2160.00</h5>
+                                    <h5 id="cart_total">{{grand_total}}</h5>
                                 </td>
                             </tr>
                        

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'lone.apps.LoneConfig',
     'myforms.apps.MyformsConfig',
+    "rest_framework"
 ]
 
 MIDDLEWARE = [
