@@ -176,7 +176,6 @@
 			$('.btnaddtocart').click(function () {
 				var productid = $(this).attr('data-productid')
 				var url = '/myproject/add_to_cart/' + productid;
-
 				$.get(url,function (response, status) {
 					console.log(response);
 					var cart_count = $('#cart_count').html()
